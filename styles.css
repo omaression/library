@@ -5,6 +5,10 @@
     --color-400: #525252;
     --color-500: #262626;
     --color-600: #171717;
+
+    --light-red: #fecaca;
+    --medium-red: #f87171;
+    --dark-red: #991b1b;
     
     --fs-50: 0.825rem;
     --fs-100: 1.125rem;
@@ -101,6 +105,92 @@ button:active {
     color: var(--color-100);
     font-size: var(--fs-400);
     font-family: 'Caprasimo', cursive;
+}
+
+
+/* Main (Add button and Books grid) */
+
+.main {
+    display: flex;
+    flex-direction: column;
+    gap: var(--pad-lg);
+    padding: var(--pad-lg);
+
+    margin-inline: auto;
+}
+
+.main .add-book-button-section {
+    display: flex;
+    justify-content: center;
+}
+
+.books-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--pad-xl);
+}
+
+.book-card {
+    background: var(--color-200);
+    padding: var(--pad-lg);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--pad-md);
+
+    border-radius: var(--border-radius-sm);
+
+    box-shadow: var(--shadow);
+}
+
+.book-card p {
+    background: var(--color-100);
+    width: 100%;
+    text-align: center;
+    padding: var(--pad-md);
+
+    border-radius: var(--border-radius-sm);
+}
+
+.book-card .buttons {
+    display: flex;
+    flex-direction: column;
+    gap: var(--pad-md);
+
+    width: 100%;
+    margin-top: var(--pad-lg);
+}
+
+.buttons .remove {
+    background: var(--light-red);
+}
+
+.buttons .remove:hover {
+    background: var(--medium-red);
+}
+
+.buttons .remove:active {
+    background: var(--dark-red);
+    color: var(--color-100);
+}
+
+.buttons .read {
+    background: #a7f3d0;
+}
+
+.buttons .read:hover {
+    background: #d1fae5;
+}
+
+.buttons .not-read {
+    background: var(--color-100);
+}
+
+.buttons .read:active,
+.buttons .not-read:active {
+    background: #6ee7b7;
+    color: var(--color-600);
 }
 
 

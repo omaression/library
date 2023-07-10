@@ -1,0 +1,168 @@
+:root {
+    --color-100: #f5f5f5;
+    --color-200: #d4d4d4;
+    --color-300: #a3a3a3;
+    --color-400: #525252;
+    --color-500: #262626;
+    --color-600: #171717;
+    
+    --fs-50: 0.825rem;
+    --fs-100: 1.125rem;
+    --fs-200: 1.25rem;
+    --fs-300: 1.5rem;
+    --fs-400: 1.75rem;
+    --fs-500: 2rem;
+    --fs-600: 2.25rem;
+
+    --pad-xs: 4px;
+    --pad-sm: 8px;
+    --pad-md: 18px;
+    --pad-lg: 32px;
+    --pad-xl: 48px;
+    
+    --border-radius-sm: 10px;
+    --border-radius-lg: 20px;
+
+    --container-width: 1200px;
+
+    --shadow: rgba(0, 0, 0, 0.1) 0px 1px 8px;
+}
+
+
+/* Resetting */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+html {
+    font-size: 16px;
+    min-height: 100vh;
+}
+
+
+/* Utils */
+
+button {
+    padding: var(--pad-sm) var(--pad-md);
+    font-size: var(--fs-200);
+    font-weight: 700;
+
+    cursor: pointer;
+    outline: none;
+    border: 2px solid var(--color-500);
+    border-radius: var(--border-radius-lg);
+}
+
+button:hover {
+    background: var(--color-200);
+}
+
+button:active {
+    background: var(--color-600);
+    color: var(--color-100);
+}
+
+
+/* Form and Modal */
+
+.blur-layer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .4);
+
+    display: none;
+}
+
+.blur-layer.active {
+    display: block;
+}
+
+.modal {
+    background: var(--color-400);
+    color: var(--color-100);
+    border: 3px solid var(--color-600);
+    border-radius: var(--border-radius-lg);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--pad-md);
+    
+    padding: var(--pad-lg);
+
+    max-width: 400px;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%) scale(0);
+    transition: all .2s ease-in-out;
+}
+
+.modal.active {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.modal h2 {
+    font-size: var(--fs-400);
+}
+
+.error-msg {
+    color: rgb(202, 119, 119);
+    font-size: var(--fs-100);
+    font-weight: 550;
+    text-align: center;
+    margin-bottom: var(--pad-sm);
+    max-width: 26ch;
+
+    display: none;
+}
+
+.error-msg.active {
+    display: block;
+}
+
+.add-book-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--pad-md);
+}
+
+.input {
+    padding: var(--pad-sm);
+    outline: none;
+    border: none;
+    border-radius: var(--border-radius-sm);
+
+    font-size: var(--fs-200);
+    font-weight: 600;
+    color: var(--color-500);
+}
+
+.is-read-container {
+    display: flex;
+    gap: var(--pad-sm);
+    margin-block: var(--pad-sm);
+}
+
+input[type="checkbox"] {
+    height: var(--fs-200);
+    width: var(--fs-200);
+    accent-color: var(--color-100);
+    cursor: pointer;
+}
+
+.is-read-label {
+    font-size: var(--fs-100);
+    font-weight: 600;
+}

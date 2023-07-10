@@ -30,3 +30,38 @@ class Library {
 }
 
 const library = new Library();
+
+const addBookBtn = document.getElementById("addBookBtn")
+    , booksGrid = document.getElementById("booksGrid")
+    , modalDiv = document.getElementById("modal")
+    , blurLayer = document.getElementById("blurLayer")
+    , bookForm = document.getElementById("addBookForm")
+    , errorMsg = document.getElementById("errorMsg")
+    , submitBtn = document.getElementById("submit");
+
+const showModal = function() {
+    blurLayer.classList.add("active");
+    modalDiv.classList.add("active");
+};
+
+const hideModal = function() {
+    blurLayer.classList.remove("active");
+    blurLayer.classList.remove("active");
+};
+
+const resetForm = function() {
+    bookForm.reset();
+};
+
+const getBookFromForm = function() {
+    const title = document.getElementById("title").value
+        , author = document.getElementById("author").value
+        , pages = document.getElementById("pages").value
+        , isRead = document.getElementById("isRead").checked;
+    
+    const newBook = new Book(title, author, pages, isRead);
+
+    library.addBook(newBook);
+    resetForm();
+    hideModal();
+};

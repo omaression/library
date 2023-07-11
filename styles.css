@@ -274,6 +274,20 @@ button:active {
     transform: translate(-50%, -50%) scale(1);
 }
 
+.modal .close {
+    position: absolute;
+    top: 4px;
+    right: 8px;
+    padding: var(--pad-xs) var(--pad-sm);
+    border: none;
+    background: inherit;
+    color: var(--medium-red);
+}
+
+.modal .close:hover {
+    color: var(--light-red);
+}
+
 .modal h2 {
     font-size: var(--fs-400);
 }

@@ -150,6 +150,8 @@ button:active {
     text-align: center;
     padding: var(--pad-md);
 
+    font-size: var(--fs-200);
+
     border-radius: var(--border-radius-sm);
 }
 

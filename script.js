@@ -18,12 +18,12 @@ class Library {
         }
     }
 
-    removeBook(toBeRemovedBook) {
-        this.books = this.books.filter((book) => book.title !== toBeRemovedBook.title);
+    removeBook(title) {
+        this.books = this.books.filter((book) => book.title !== title);
     }
 
-    getBook(wantedBook) {
-        return this.books.find((book) => book.title = wantedBook);
+    getBook(title) {
+        return this.books.find((book) => book.title = title);
     }
 
     doesBookExist(newBook) {
@@ -100,6 +100,10 @@ const createBookCard = function(book) {
         buttons.classList.add("buttons");
         remove.classList.add("remove");
 
+        // Buttons functionality:
+        read.addEventListener("click", toggleRead);
+        remove.addEventListener("click", removeBook);
+
         if (book.isRead) {
             if (read.classList.contains("not-read")) {
                 read.classList.remove("not-read");
@@ -130,14 +134,30 @@ const createBookCard = function(book) {
         bookCard.appendChild(buttons);
         booksGrid.appendChild(bookCard);
 
-}
+};
 
 const createGrid = function() {
     resetGrid();
     for(let book of library.books) {
         createBookCard(book);
     }
-}
+};
+
+const toggleRead = function(e) {
+    const title = e.target.parentElement.parentElement.childNodes[0].textContent;
+    const book = library.getBook(title);
+    if (book.isRead) {
+        book.isRead = false;
+    } else {
+        book.isRead = true;
+    }
+    createGrid();
+};
+
+const removeBook = function(e) {
+    console.log(e);
+};
+
 
 addBookBtn.addEventListener("click", showModal);
 bookForm.addEventListener("submit", addBookToLibrary);

@@ -179,7 +179,8 @@ button:active {
     background: #a7f3d0;
 }
 
-.buttons .read:hover {
+.buttons .read:hover,
+.buttons .not-read:hover {
     background: #d1fae5;
 }
 

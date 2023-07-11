@@ -155,9 +155,10 @@ const toggleRead = function(e) {
 };
 
 const removeBook = function(e) {
-    console.log(e);
+    const title = e.target.parentElement.parentElement.childNodes[0].textContent;
+    library.removeBook(title);
+    createGrid();
 };
-
 
 addBookBtn.addEventListener("click", showModal);
 bookForm.addEventListener("submit", addBookToLibrary);

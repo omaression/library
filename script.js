@@ -23,7 +23,7 @@ class Library {
     }
 
     getBook(title) {
-        return this.books.find((book) => book.title = title);
+        return this.books.find((book) => book.title === title);
     }
 
     doesBookExist(newBook) {

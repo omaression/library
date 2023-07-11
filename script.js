@@ -38,6 +38,7 @@ const library = new Library();
 const addBookBtn = document.getElementById("addBookBtn")
     , booksGrid = document.getElementById("booksGrid")
     , modalDiv = document.getElementById("modal")
+    , closeModalBtn = document.getElementById("close")
     , blurLayer = document.getElementById("blurLayer")
     , bookForm = document.getElementById("addBookForm")
     , errorMsg = document.getElementById("errorMsg")
@@ -162,3 +163,6 @@ const removeBook = function(e) {
 
 addBookBtn.addEventListener("click", showModal);
 bookForm.addEventListener("submit", addBookToLibrary);
+
+closeModalBtn.addEventListener("click", hideModal);
+blurLayer.addEventListener("click", hideModal);

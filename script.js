@@ -1,11 +1,4 @@
-class Book {
-    constructor(title, author, pages, isRead) {
-        this.title = title;
-        this.author = author;
-        this.pages = pages;
-        this.isRead = isRead;
-    }
-}
+const bookFactory = (title, author, pages, isRead) => ({title, author, pages, isRead});
 
 class Library {
     constructor() {
@@ -70,7 +63,7 @@ const getBookFromForm = function() {
         , pages = document.getElementById("pages").value
         , isRead = document.getElementById("isRead").checked;
     
-    return new Book(title, author, pages, isRead);
+    return bookFactory(title, author, pages, isRead);
 };
 
 const addBookToLibrary = function(e) {
